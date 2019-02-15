@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 13</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+<div id="container">
+    <div class="panel">
+        div1--Line 1<br>
+        Line 2
+        <p></p>
+        <hr/>
+    </div>
+    <div class="panel">
+        div2--Line 1<br>
+        Line 2<br>
+        Line 3<br>
+        Line 4
+        <p></p>
+        <hr/>
+    </div>
+    <div class="panel">
+        div3--Line 1
+        <p></p>
+        <hr/>
+    </div>
+    <div class="panel">
+        div4--Line 1<br>
+        Line 2
+        <p></p>
+        <hr/> Note : check console for max height.
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        var hi = 0;
+        $("div").each(function () {
+            var h = $(this).height();
+            if(h>hi){hi = h;}
+        });
+        console.log("max height is "+hi);
+        $(".container > .panel > p").text(hi);
+    });
+</script>
+</body>
+</html>

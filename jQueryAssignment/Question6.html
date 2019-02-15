@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js">
+    </script>
+</head>
+<body>
+<h4>Question 6:</h4>
+<p>This is a paragraph.</p>
+<button>Replace the first p element with new text</button>
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("p").html("<b>changed</b>");
+        });
+    });
+</script>
+</body>
+</html>
