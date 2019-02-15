@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 5</title>
+</head>
+<body>
+<h1>Employees</h1>
+<p>Employees with salary greater than 5000</p>
+<ul id="sal"></ul>
+<hr/>
+<p>Employees group on the basis of age</p>
+<ul id="age"></ul>
+<hr/>
+<p>Salary increment</p>
+<ul id="inc"></ul>
+<script charset="utf-8">
+    var list = [
+        {name: 'Mehak', age: 21, salary: 7000, dob: '14/12/1995'},
+        {name: 'Sid', age: 22, salary: 5000, dob: '14/12/1995'},
+        {name: 'Sagar', age: 21, salary: 10000, dob: '14/12/1995'},
+        {name: 'Gaurav', age: 22, salary: 3000, dob: '14/12/1995'},
+        {name: 'Yatin', age: 25, salary: 1000, dob: '14/12/1995'}
+    ];
+    employee(list);
+
+    function employee(list) {
+        var salg = [];
+        var key;
+        for (key in list) {
+            console.log(list[key].salary)
+            if (list[key].salary > 5000) {
+                salg.push(list[key]);
+                document.getElementById('sal').innerHTML += '<li><b>' + list[key].name +
+                    '</b> : salary=' + list[key].salary + '</li>';
+
+            }
+        }
+        return salg;
+    }
+
+    employee_age(list);
+
+    function employee_age(list) {
+        var l = {};
+
+        for (var i = 0; i <= 4; i++) {
+            if (!l[list[i].age]) {
+                l[list[i].age] = [list[i]];
+            } else {
+                l[list[i].age].push(list[i]);
+            }
+        }
+        console.log(l);
+        for (key in l) {
+            var obj = key + " : ";
+            for (k in l[key]) {
+                if (k < (l[key].length - 1)) {
+                    obj = obj + l[key][k].name + ",";
+                } else {
+                    obj = obj + l[key][k].name;
+                }
+            }
+            document.getElementById('age').innerHTML += '<li><b>' + obj + '</b></li>';
+        }
+
+        //for (key in l)
+        // for(var k= 0; k<l.length; k++){
+        //     var element  = l[k];
+        //     console.log("elemen>>>" + element);
+        //     document.getElementById('age').innerHTML += element;
+        //     for(var j=0; j <element.values.length; j++){
+        //         document.getElementById('age').innerHTML += '<li><b>' +j.name+'</li>';
+        //     }
+        // }
+
+        // console.log(l);
+        return l;
+
+    }
+
+    salary(list);
+
+    function salary(list) {
+        var sal = [];
+        var key;
+        for (key in list) {
+            if (list[key].salary <= 1000 && list[key].age > 20) {
+                sal[key] = list[key];
+                list[key].salary = list[key].salary * 5;
+                document.getElementById('inc').innerHTML += '<li><b>' + list[key].name +
+                    '</b> : salary incremented to=' + list[key].salary + '</li>';
+            }
+        }
+        return sal;
+
+    }
+
+
+</script>
+
+</body>
+</html>
