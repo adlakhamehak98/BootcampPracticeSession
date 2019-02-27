@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js">
+    </script>
+</head>
+<body>
+<h4>Question 9:</h4>
+
+<select id="competency">
+    <option value="JVM">JVM</option>
+    <option value="MEAN">MEAN</option>
+    <option value="DevOps">DevOps</option>
+    <option value="QE">QE</option>
+</select>
+
+<p><b>Selected competency:</b></p>
+<div class="answer"></div>
+<script>
+    $(document).ready(function() {
+        $('select').on('change', function() {
+            $("div.answer").text(this.value);
+        });
+    });
+</script>
+</body>
+</html>

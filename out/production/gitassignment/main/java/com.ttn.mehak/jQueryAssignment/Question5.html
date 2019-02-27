@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js">
+    </script>
+</head>
+<body>
+<h4>Question 5:</h4>
+<div id="main">Hello I am parent
+<p class="target">Hello I am child</p>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $("div#main").children(".target").css( "color", "red" );
+    });
+</script>
+</body>
+</html>
+
+

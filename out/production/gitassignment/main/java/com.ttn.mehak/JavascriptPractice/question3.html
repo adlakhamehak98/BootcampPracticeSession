@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 3</title>
+</head>
+<body>
+<h1>Area of Circle</h1>
+<hr/>
+<p>Radius = <span id = "r"></span></p>
+<p>Area = <span id="area"></span></p>
+<script charset="utf-8">
+    (function() {
+        'use strict';
+        var r=prompt("Enter the radius of circle:");
+        document.getElementById("r").innerHTML=r;
+
+        var a= r * r * Math.PI;
+        document.getElementById("area").innerHTML=a;
+    }());
+</script>
+
+</body>
+</html>

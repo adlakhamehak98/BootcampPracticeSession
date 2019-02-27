@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 15</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <style>
+        table,tr,td{
+            border: black solid 2px;
+            padding: 50px;
+            border-collapse: collapse;
+            background: lightpink;
+        }
+    </style>
+</head>
+<body>
+<h4>Question 14:</h4>
+<table>
+    <tr>
+        <td>17</td>
+        <td>6</td>
+        <td>8</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>7</td>
+        <td>9</td>
+        <td>11</td>
+    </tr>
+</table>
+<script>
+    $(document).ready(function () {
+        $("table").each(function (e) {
+            $("tr").each(function (e) {
+                $("td").each(function () {
+                    var a = parseInt($(this).text());
+                    if(a>10){$(this).css("background","green");}
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>

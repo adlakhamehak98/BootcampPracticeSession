@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js">
+    </script>
+</head>
+<body>
+<h2></h2>
+<button>Generate new element</button>
+<script>
+    $(document).ready(function() {
+        var counter = 0;
+        $("button").click(function () {
+            $("h2").append("<p class='test'>Button click " + (++counter) + "</p>")
+        });
+// With on():
+        $("h2").on("click", "p.test", function () {
+            alert($(this).text());
+        });
+    });
+</script>
+</body>
+</html>
