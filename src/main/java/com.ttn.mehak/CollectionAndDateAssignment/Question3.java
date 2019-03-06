@@ -10,14 +10,22 @@ public class Question3 {
         HashMap<Character, Integer> map = new HashMap<>();
         /* Count array with frequency of characters */
         for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) != ' ') {
-                count[(int) str.charAt(i)]++;
+            if (map.get(str.charAt(i)) == null) {
+                map.put(str.charAt(i), 1);
+            } else {
+                map.put(str.charAt(i), map.get(str.charAt(i)) + 1);
             }
         }
-        //add count array to map to store distinct values of key i.e., characters
-        for (int i = 0; i < str.length(); i++)
-            map.put(str.charAt(i), count[(int) str.charAt(i)]);
 
+//        for (int i = 0; i < str.length(); i++) {                 //THIS WAS MY WAY OF DOING IT
+//            if (str.charAt(i) != ' ') {
+//                count[(int) str.charAt(i)]++;
+//            }
+//        }
+//        //add count array to map to store distinct values of key i.e., characters
+//        for (int i = 0; i < str.length(); i++)
+//            map.put(str.charAt(i), count[(int) str.charAt(i)]);
+//
         //print map
         for (HashMap.Entry m : map.entrySet()) {
             System.out.println("Character: " + m.getKey() + " ,Number of occurences: " + m.getValue());
